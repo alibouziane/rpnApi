@@ -39,7 +39,7 @@ namespace rpnApi.Controllers
                 return Ok(WebApiApplication.stack);
             }
 
-            throw new InvalidOperationException("Invalid input, I don't know what \"" + stack_id + "\" means.");
+            throw new InvalidOperationException("Invalid input, " + stack_id);
         }
 
 
