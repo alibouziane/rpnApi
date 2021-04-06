@@ -1,17 +1,30 @@
-﻿using System;
+﻿using rpnApi.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
-using System.Web.Routing;
 
 namespace rpnApi
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
+        public static IEnumerable<Operator> Operators;
+        public static Stack<decimal> stack { get; set; }
+
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+
+            stack = new Stack<decimal>();
+
+
+            Operators = new List<Operator>
+                {
+                    new AdditionOperator("+"),
+                    new SubtractionOperator("-"),
+                    new MultiplicationOperator("*"),
+                    new DivisionOperator("/")
+                };
+
         }
     }
 }

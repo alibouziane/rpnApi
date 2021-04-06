@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 
 namespace rpnApi
 {
     public static class WebApiConfig
     {
+        //public static Stack<decimal> _stack;
+
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
@@ -15,10 +15,12 @@ namespace rpnApi
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+                name: "ActionApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+            defaults: new { id = RouteParameter.Optional }
             );
+
+
         }
     }
 }
