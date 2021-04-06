@@ -50,12 +50,6 @@ namespace rpnApi.Controllers
             WebApiApplication.stack.Pop();// je supprime le dernier input saisie
             // a voir lequel de l'element faut il supprimer???
 
-            //var list = new List<decimal>();
-            //foreach (var item in WebApiApplication.stack)
-            //{
-            //    if (item != input)
-            //        list.Add(input);
-            //}
 
             return Ok(WebApiApplication.stack);
         }
